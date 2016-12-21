@@ -1,0 +1,66 @@
+ <div class="productlist" id="ProductList" *ngIf='products && products.length'>
+      <div class="product-table-header w-row" id="ProductTableHeader">
+        <div class="w-col w-col-2">
+          <div class="column-value">
+            <h5 class="table-heading">PRODUCT NAME</h5>
+          </div>
+        </div>
+        <div class="w-col w-col-2">
+          <div class="column-value">
+            <h5 class="table-heading">PRODUCT CODE</h5>
+          </div>
+        </div>
+        <div class="w-col w-col-2">
+          <div class="column-value">
+            <h5 class="table-heading">RELEASE DATE</h5>
+          </div>
+        </div>
+        <div class="w-col w-col-1">
+          <div class="column-value">
+            <h5 class="table-heading">PRICE</h5>
+          </div>
+        </div>
+        <div class="w-col w-col-1">
+          <div class="column-value">
+            <h5 class="table-heading">RATING</h5>
+          </div>
+        </div>
+        <div class="w-col w-col-4" *ngIf='displayDescription'>
+          <div class="column-value">
+            <h5 class="table-heading">DESCRIPTION</h5>
+          </div>
+        </div>
+      </div>
+      <div class="product-table-row w-row" id="ProductTableRow" *ngFor='let product of products'>
+        <div class="w-col w-col-2">
+          <div class="column-value">
+            <div class="string-value">{{product.productName}}</div>
+          </div>
+        </div>
+        <div class="w-col w-col-2">
+          <div class="column-value">
+            <div class="string-value">{{product.productId}}</div>
+          </div>
+        </div>
+        <div class="w-col w-col-2">
+          <div class="column-value">
+            <div class="string-value">{{product.releaseDate}}</div>
+          </div>
+        </div>
+        <div class="w-col w-col-1">
+          <div class="column-value">
+            <div class="string-value">{{product.price}}</div>
+          </div>
+        </div>
+        <div class="w-col w-col-1">
+          <div class="column-value">
+            <div class="string-value">{{product.starRating}}</div>
+          </div>
+        </div>
+        <div class="w-col w-col-4" *ngIf='displayDescription'>
+          <div class="column-value">
+            <div class="string-value">{{product.description}}</div>
+          </div>
+        </div>
+      </div>
+ </div>
