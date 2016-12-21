@@ -99,6 +99,11 @@
   color: #fff;
 }
 
+.string-value {
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
 .footer {
   display: -webkit-box;
   display: -webkit-flex;
@@ -109,4 +114,10 @@
   -ms-flex-order: 1;
   order: 1;
   background-color: rgba(0, 0, 0, .1);
+}
+
+.table-image {
+  height: 20px;
+  margin-top: 3px;
+  padding-top: 0px;
 }

@@ -11,7 +11,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var ProductListComponent = (function () {
     function ProductListComponent() {
-        this.displayDescription = false;
+        this.imageWidth = 20;
+        this.showImage = true;
         this.products = [
             {
                 "productId": 1,
@@ -45,8 +46,12 @@ var ProductListComponent = (function () {
             }
         ];
     }
-    ProductListComponent.prototype.toggleDescription = function () {
-        this.displayDescription = !this.displayDescription;
+    ProductListComponent.prototype.ngOnInit = function () {
+        console.log('In OnInit');
+    };
+    ;
+    ProductListComponent.prototype.toggleImage = function () {
+        this.showImage = !this.showImage;
     };
     ;
     return ProductListComponent;

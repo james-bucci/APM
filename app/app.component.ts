@@ -5,10 +5,11 @@ import { Component } from '@angular/core';
     template : 
     `  
     <div class="main-section">
-     <h1 class="app-title">{{pageTitle}}</h1>
-     <div class="menu-div"><a class="menu-item" href="#">CONTACT</a><a class="menu-item" href="#">DELETE</a><a class="menu-item" href="#">NEW</a></div>
-     <pm-productlist></pm-productlist>
-     <div class="footer"></div>
+    <h1 class="app-title">{{pageTitle}}</h1>
+    <div class="menu-div" id="menuBar"><a class="menu-item">SHOW IMAGE</a>
+    </div>
+    <pm-productlist></pm-productlist>
+    <div class="footer"></div>
     </div>
     `
 })

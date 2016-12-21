@@ -9,18 +9,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var AppComponent = (function () {
-    function AppComponent() {
-        this.pageTitle = 'Product Management';
+var ProductFilterPipe = (function () {
+    function ProductFilterPipe() {
     }
-    return AppComponent;
+    ProductFilterPipe.prototype.transform = function (value, filterBy) {
+        return;
+    };
+    return ProductFilterPipe;
 }());
-AppComponent = __decorate([
-    core_1.Component({
-        selector: 'pm-app',
-        template: "  \n    <div class=\"main-section\">\n    <h1 class=\"app-title\">{{pageTitle}}</h1>\n    <div class=\"menu-div\" id=\"menuBar\"><a class=\"menu-item\">SHOW IMAGE</a>\n    </div>\n    <pm-productlist></pm-productlist>\n    <div class=\"footer\"></div>\n    </div>\n    "
+ProductFilterPipe = __decorate([
+    core_1.Pipe({
+        name: 'productFilter'
     }),
     __metadata("design:paramtypes", [])
-], AppComponent);
-exports.AppComponent = AppComponent;
-//# sourceMappingURL=app.component.js.map
+], ProductFilterPipe);
+exports.ProductFilterPipe = ProductFilterPipe;
+//# sourceMappingURL=product-filter.pipe.js.map
