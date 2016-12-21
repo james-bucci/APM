@@ -1,6 +1,5 @@
     <div class="productlist" id="ProductList" *ngIf='products && products.length'>
      <p></p>
-     <button (click)='toggleImage()'>{{showImage ? 'Hide' : 'Show'}} Image</button>
      <input type="text" [(ngModel)]='userFilter'/>
      <h4>Filtered By: {{userFilter}} </h4>
       <div class="product-table-header w-row" id="ProductTableHeader">

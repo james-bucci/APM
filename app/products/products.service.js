@@ -9,11 +9,11 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var ProductListComponent = (function () {
-    function ProductListComponent() {
-        this.imageWidth = 20;
-        this.showImage = true;
-        this.products = [
+var ProductService = (function () {
+    function ProductService() {
+    }
+    ProductService.prototype.getProducts = function () {
+        return [
             {
                 "productId": 1,
                 "productName": "Leaf Rake",
@@ -43,25 +43,25 @@ var ProductListComponent = (function () {
                 "price": 8.9,
                 "starRating": 4.8,
                 "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+            },
+            {
+                "productId": 8,
+                "productName": "Saw",
+                "productCode": "TBX-0022",
+                "releaseDate": "May 15, 2016",
+                "description": "15-inch steel blade hand saw",
+                "price": 11.55,
+                "starRating": 3.7,
+                "imageUrl": "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
             }
         ];
-    }
-    ProductListComponent.prototype.ngOnInit = function () {
-        console.log('In OnInit');
     };
     ;
-    return ProductListComponent;
+    return ProductService;
 }());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", Boolean)
-], ProductListComponent.prototype, "showImage", void 0);
-ProductListComponent = __decorate([
-    core_1.Component({
-        selector: 'pm-productlist',
-        templateUrl: 'app/products/product-list.component.html'
-    }),
+ProductService = __decorate([
+    core_1.Injectable(),
     __metadata("design:paramtypes", [])
-], ProductListComponent);
-exports.ProductListComponent = ProductListComponent;
-//# sourceMappingURL=product-list.component.js.map
+], ProductService);
+exports.ProductService = ProductService;
+//# sourceMappingURL=products.service.js.map

@@ -9,16 +9,24 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
+var products_service_1 = require("./products/products.service");
 var AppComponent = (function () {
     function AppComponent() {
         this.pageTitle = 'Product Management';
+        this.showImage = true;
     }
+    AppComponent.prototype.toggleImage = function () {
+        console.log('clicked');
+        this.showImage = !this.showImage;
+    };
+    ;
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'pm-app',
-        template: "  \n    <div class=\"main-section\">\n    <h1 class=\"app-title\">{{pageTitle}}</h1>\n    <div class=\"menu-div\" id=\"menuBar\"><a class=\"menu-item\">SHOW IMAGE</a>\n    </div>\n    <pm-productlist></pm-productlist>\n    <div class=\"footer\"></div>\n    </div>\n    "
+        template: "  \n    <div class=\"main-section\">\n    <h1 class=\"app-title\">{{pageTitle}}</h1>\n    <div class=\"menu-div\" id=\"menuBar\"><a class='menu-item' (click)='toggleImage()'>{{showImage ? 'Show' : 'Hide'}} Image</a>\n    </div>\n    <pm-productlist [showImage]='showImage'></pm-productlist>\n    <div class=\"footer\"></div>\n    </div>\n    ",
+        providers: [products_service_1.ProductService]
     }),
     __metadata("design:paramtypes", [])
 ], AppComponent);

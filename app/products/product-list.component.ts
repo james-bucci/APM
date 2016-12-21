@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core'
+import { Component, Input, OnInit } from '@angular/core'
 import { IProduct } from './product'
 
 @Component({
@@ -8,7 +8,7 @@ import { IProduct } from './product'
 export class ProductListComponent implements OnInit {
     
     imageWidth : number = 20;
-    showImage : boolean = true;
+    @Input() showImage : boolean = true;
     userFilter : string;
 
     products: IProduct[] = [
@@ -46,9 +46,5 @@ export class ProductListComponent implements OnInit {
 
     ngOnInit() : void {
         console.log('In OnInit')
-    };
-
-    toggleImage() : void {
-        this.showImage = !this.showImage;
     };
 }
