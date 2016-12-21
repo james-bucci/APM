@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
     template : 
     `  
     <div class="main-section">
-     <h1 class="app-title">Bang {{pageTitle}}</h1>
+     <h1 class="app-title">{{pageTitle}}</h1>
      <div class="menu-div"><a class="menu-item" href="#">CONTACT</a><a class="menu-item" href="#">DELETE</a><a class="menu-item" href="#">NEW</a></div>
      <pm-productlist></pm-productlist>
      <div class="footer"></div>
