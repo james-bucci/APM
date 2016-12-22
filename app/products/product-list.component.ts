@@ -1,15 +1,19 @@
-import { Component, Input, OnInit } from '@angular/core'
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core'
 import { IProduct } from './product'
 
 @Component({
     selector : 'pm-productlist',
-    templateUrl : 'app/products/product-list.component.html'
+    templateUrl : 'app/products/product-list.component.html',
 })
 export class ProductListComponent implements OnInit {
     
     imageWidth : number = 20;
-    @Input() showImage : boolean = true;
     userFilter : string;
+    
+    @Input() showImage : boolean = true;
+
+    @Output() ratingClicked : EventEmitter<string> = 
+        new EventEmitter<string>();
 
     products: IProduct[] = [
         {
@@ -46,5 +50,10 @@ export class ProductListComponent implements OnInit {
 
     ngOnInit() : void {
         console.log('In OnInit')
+    };
+
+    onStarRatingClicked(message : string ) : void {
+        console.log('container received message from stars being clicked : ' + message);
+        this.ratingClicked.emit(message);
     };
 }

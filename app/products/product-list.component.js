@@ -13,6 +13,7 @@ var ProductListComponent = (function () {
     function ProductListComponent() {
         this.imageWidth = 20;
         this.showImage = true;
+        this.ratingClicked = new core_1.EventEmitter();
         this.products = [
             {
                 "productId": 1,
@@ -50,16 +51,25 @@ var ProductListComponent = (function () {
         console.log('In OnInit');
     };
     ;
+    ProductListComponent.prototype.onStarRatingClicked = function (message) {
+        console.log('container received message from stars being clicked : ' + message);
+        this.ratingClicked.emit(message);
+    };
+    ;
     return ProductListComponent;
 }());
 __decorate([
     core_1.Input(),
     __metadata("design:type", Boolean)
 ], ProductListComponent.prototype, "showImage", void 0);
+__decorate([
+    core_1.Output(),
+    __metadata("design:type", core_1.EventEmitter)
+], ProductListComponent.prototype, "ratingClicked", void 0);
 ProductListComponent = __decorate([
     core_1.Component({
         selector: 'pm-productlist',
-        templateUrl: 'app/products/product-list.component.html'
+        templateUrl: 'app/products/product-list.component.html',
     }),
     __metadata("design:paramtypes", [])
 ], ProductListComponent);

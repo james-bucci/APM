@@ -13,7 +13,10 @@ var ProductFilterPipe = (function () {
     function ProductFilterPipe() {
     }
     ProductFilterPipe.prototype.transform = function (value, filterBy) {
-        return;
+        filterBy = filterBy ? filterBy.toLocaleLowerCase() : null;
+        return filterBy ? value.filter(function (product) {
+            return product.productName.toLocaleLowerCase().indexOf(filterBy) !== -1;
+        }) : value;
     };
     return ProductFilterPipe;
 }());

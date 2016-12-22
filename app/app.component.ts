@@ -7,9 +7,12 @@ import { ProductService } from './products/products.service';
     `  
     <div class="main-section">
     <h1 class="app-title">{{pageTitle}}</h1>
-    <div class="menu-div" id="menuBar"><a class='menu-item' (click)='toggleImage()'>{{showImage ? 'Show' : 'Hide'}} Image</a>
+    <div class="menu-div" id="menuBar"><a class='menu-item' (click)='toggleImage()'>{{showImage ? 'Hide' : 'Show'}} Image</a>
     </div>
-    <pm-productlist [showImage]='showImage'></pm-productlist>
+    <pm-productlist 
+        [showImage]='showImage'
+        (ratingClicked)='onRatingClicked($event)'>
+    </pm-productlist>
     <div class="footer"></div>
     </div>
     `,
@@ -23,4 +26,8 @@ export class AppComponent {
         console.log('clicked');
         this.showImage = !this.showImage;
     };
+
+    onRatingClicked(message: string) : void {
+        this.pageTitle = 'Product Management : ' + message;
+    }
 }
