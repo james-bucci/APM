@@ -10,17 +10,21 @@ export class ProductListComponent implements OnInit {
     
     imageWidth : number = 20;
     userFilter : string;
+    errorMessage : string;
 
     @Input() showImage : boolean = true;
 
     @Output() ratingClicked : EventEmitter<string> = new EventEmitter<string>();
 
     products: IProduct[];
-
     constructor(private _productService : ProductService) {};
 
     ngOnInit() : void {
-        this.products = this._productService.getProducts(); 
+        this._productService.getProducts()
+            .subscribe(
+                products => this.products = products,
+                error => this.errorMessage = <any> error
+            );
     };
 
     onStarRatingClicked(message : string ) : void {

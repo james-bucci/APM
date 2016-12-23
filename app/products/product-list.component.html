@@ -1,7 +1,7 @@
-    <div class="productlist" id="ProductList" *ngIf='products && products.length'>
+    <div class="productlist" id="ProductList">
      <p></p>
      <input type="text" [(ngModel)]='userFilter'/>
-     <h4>Filtered By: {{userFilter}} </h4>
+     <h4>Filtered By: {{errorMessage}} </h4>
       <div class="product-table-header w-row" id="ProductTableHeader">
         <div class="w-col w-col-2">
           <div class="column-value">
