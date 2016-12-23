@@ -6,17 +6,18 @@ import { ProductService } from './products/products.service';
     template : 
     `  
     <div class="main-section">
-    <h1 class="app-title">{{pageTitle}}</h1>
-    <div class="menu-div" id="menuBar"><a class='menu-item' (click)='toggleImage()'>{{showImage ? 'Hide' : 'Show'}} Image</a>
-    </div>
-    <pm-productlist 
-        [showImage]='showImage'
-        (ratingClicked)='onRatingClicked($event)'>
-    </pm-productlist>
-    <div class="footer"></div>
+        <h1 class="app-title">{{pageTitle}}</h1>
+        <div class="menu-div" id="menuBar">
+            <a class='menu-item' (click)='toggleImage()'>{{showImage ? 'Hide' : 'Show'}} Image</a>
+        </div>
+        <pm-productlist 
+            [showImage]='showImage'
+            (ratingClicked)='onRatingClicked($event)'>
+        </pm-productlist>
+        <div class="footer"></div>
     </div>
     `,
-    providers: [ProductService]
+    providers: [ ProductService ]
 })
 export class AppComponent {
     pageTitle : string = 'Product Management';

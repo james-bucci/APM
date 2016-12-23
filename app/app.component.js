@@ -28,7 +28,7 @@ var AppComponent = (function () {
 AppComponent = __decorate([
     core_1.Component({
         selector: 'pm-app',
-        template: "  \n    <div class=\"main-section\">\n    <h1 class=\"app-title\">{{pageTitle}}</h1>\n    <div class=\"menu-div\" id=\"menuBar\"><a class='menu-item' (click)='toggleImage()'>{{showImage ? 'Hide' : 'Show'}} Image</a>\n    </div>\n    <pm-productlist \n        [showImage]='showImage'\n        (ratingClicked)='onRatingClicked($event)'>\n    </pm-productlist>\n    <div class=\"footer\"></div>\n    </div>\n    ",
+        template: "  \n    <div class=\"main-section\">\n        <h1 class=\"app-title\">{{pageTitle}}</h1>\n        <div class=\"menu-div\" id=\"menuBar\">\n            <a class='menu-item' (click)='toggleImage()'>{{showImage ? 'Hide' : 'Show'}} Image</a>\n        </div>\n        <pm-productlist \n            [showImage]='showImage'\n            (ratingClicked)='onRatingClicked($event)'>\n        </pm-productlist>\n        <div class=\"footer\"></div>\n    </div>\n    ",
         providers: [products_service_1.ProductService]
     }),
     __metadata("design:paramtypes", [])
