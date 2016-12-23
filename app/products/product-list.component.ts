@@ -1,9 +1,9 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+
 import { IProduct } from './product';
 import { ProductService } from './products.service';
 
 @Component({
-    selector : 'pm-productlist',
     templateUrl : 'app/products/product-list.component.html',
 })
 export class ProductListComponent implements OnInit {

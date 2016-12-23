@@ -41,7 +41,6 @@ __decorate([
 ], ProductListComponent.prototype, "ratingClicked", void 0);
 ProductListComponent = __decorate([
     core_1.Component({
-        selector: 'pm-productlist',
         templateUrl: 'app/products/product-list.component.html',
     }),
     __metadata("design:paramtypes", [products_service_1.ProductService])

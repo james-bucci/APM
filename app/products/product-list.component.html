@@ -37,7 +37,9 @@
       <div class="product-table-row w-row" id="ProductTableRow" *ngFor='let product of products | productFilter:userFilter'>
         <div class="w-col w-col-2">
           <div class="column-value">
-            <div class="string-value">{{product.productName}}</div>
+            <div class="string-value">
+              <a [routerLink]="['/product', product.productId]">{{product.productName}}</a>
+            </div>
           </div>
         </div>
         <div class="w-col w-col-2">

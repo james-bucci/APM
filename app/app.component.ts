@@ -8,12 +8,12 @@ import { ProductService } from './products/products.service';
     <div class="main-section">
         <h1 class="app-title">{{pageTitle}}</h1>
         <div class="menu-div" id="menuBar">
-            <a class='menu-item' (click)='toggleImage()'>{{showImage ? 'Hide' : 'Show'}} Image</a>
+            <a class='menu-item' [routerLink]="['/welcome']">HOME</a>
+            <a class='menu-item' [routerLink]="['/products']">PRODUCT LIST</a>
         </div>
-        <pm-productlist 
-            [showImage]='showImage'
-            (ratingClicked)='onRatingClicked($event)'>
-        </pm-productlist>
+        <div class="main-section">
+            <router-outlet></router-outlet>
+        </div>
         <div class="footer"></div>
     </div>
     `,
@@ -21,14 +21,5 @@ import { ProductService } from './products/products.service';
 })
 export class AppComponent {
     pageTitle : string = 'Product Management';
-    showImage : boolean = true;
 
-    toggleImage() : void {
-        console.log('clicked');
-        this.showImage = !this.showImage;
-    };
-
-    onRatingClicked(message: string) : void {
-        this.pageTitle = 'Product Management : ' + message;
-    }
 }

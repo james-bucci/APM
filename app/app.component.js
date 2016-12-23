@@ -13,22 +13,13 @@ var products_service_1 = require("./products/products.service");
 var AppComponent = (function () {
     function AppComponent() {
         this.pageTitle = 'Product Management';
-        this.showImage = true;
     }
-    AppComponent.prototype.toggleImage = function () {
-        console.log('clicked');
-        this.showImage = !this.showImage;
-    };
-    ;
-    AppComponent.prototype.onRatingClicked = function (message) {
-        this.pageTitle = 'Product Management : ' + message;
-    };
     return AppComponent;
 }());
 AppComponent = __decorate([
     core_1.Component({
         selector: 'pm-app',
-        template: "  \n    <div class=\"main-section\">\n        <h1 class=\"app-title\">{{pageTitle}}</h1>\n        <div class=\"menu-div\" id=\"menuBar\">\n            <a class='menu-item' (click)='toggleImage()'>{{showImage ? 'Hide' : 'Show'}} Image</a>\n        </div>\n        <pm-productlist \n            [showImage]='showImage'\n            (ratingClicked)='onRatingClicked($event)'>\n        </pm-productlist>\n        <div class=\"footer\"></div>\n    </div>\n    ",
+        template: "  \n    <div class=\"main-section\">\n        <h1 class=\"app-title\">{{pageTitle}}</h1>\n        <div class=\"menu-div\" id=\"menuBar\">\n            <a class='menu-item' [routerLink]=\"['/welcome']\">HOME</a>\n            <a class='menu-item' [routerLink]=\"['/products']\">PRODUCT LIST</a>\n        </div>\n        <div class=\"main-section\">\n            <router-outlet></router-outlet>\n        </div>\n        <div class=\"footer\"></div>\n    </div>\n    ",
         providers: [products_service_1.ProductService]
     }),
     __metadata("design:paramtypes", [])
